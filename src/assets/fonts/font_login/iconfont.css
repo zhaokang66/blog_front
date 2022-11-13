@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3766682 */
+  src: url('iconfont.woff2?t=1668239174092') format('woff2'),
+       url('iconfont.woff?t=1668239174092') format('woff'),
+       url('iconfont.ttf?t=1668239174092') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 25px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-yuechi:before {
+  content: "\e607";
+}
+.icon-yonghu:before {
+  content: "\e633";
+}
+
