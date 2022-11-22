@@ -12,31 +12,31 @@
            <input type="password" placeholder="Password" v-model="password">
          </div>
        </div>
-       <button @click="login">login</button>
+       <button @click="userLogin">login</button>
      </div>
   </div>
 </template>
 
 <script>
+
+import {login} from '../api/login'
 export default {
   data(){
     return{
-      username:'测试用户',
+      username:'aa',
       password:'123456'
     }
   },
   methods:{
-    async login(){
+    async userLogin(){
       if(this.username.length===0 || this.password.length===0){
         alert('用户名或者密码不能为空')
         return
       }else{
-        let jsons = {
-          userName: this.username,
-          passWord: this.password
-        }
-        const res = await this.$http.post('login',jsons)
-        console.log(res)
+        console.log(this.username,this.password)
+        let res = await login(this.username,this.password)
+        if(res.data.code !== 20000) return this.$message.error('登录失败')
+        this.$message.success('登录成功')
       }
     }
   }
